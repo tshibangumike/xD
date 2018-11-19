@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BA9608E5-BB92-4102-9A24-07DAAA1B108A}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>xd.CA</RootNamespace>
-    <AssemblyName>xd.CA</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <ProjectGuid>{AFA850CC-906C-4E35-917E-F9B0DD4741DF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>xd.Model</RootNamespace>
+    <AssemblyName>xd.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,12 +40,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Manager\ModelManager.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Domain\BaseDomain.cs" />
+    <Compile Include="Domain\BaseTypeDomain.cs" />
+    <Compile Include="Domain\Column.cs" />
+    <Compile Include="Domain\DbType.cs" />
+    <Compile Include="Domain\Entity.cs" />
+    <Compile Include="Domain\Field.cs" />
+    <Compile Include="Domain\FieldRequirementLevel.cs" />
+    <Compile Include="Domain\FieldType.cs" />
+    <Compile Include="Domain\Form.cs" />
+    <Compile Include="Domain\FormType.cs" />
+    <Compile Include="Domain\OrderByType.cs" />
+    <Compile Include="Domain\Role.cs" />
+    <Compile Include="Domain\Section.cs" />
+    <Compile Include="Domain\SectionField.cs" />
+    <Compile Include="Domain\Tab.cs" />
+    <Compile Include="Domain\View.cs" />
+    <Compile Include="Domain\ViewColumn.cs" />
+    <Compile Include="Domain\ViewType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
