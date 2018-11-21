@@ -2,7 +2,7 @@
 
 namespace xd.Interface
 {
-    public interface IFieldRepository: IRepository<Field>
-    {
-    }
+    //public interface IFieldRepository: IRepository<Field>
+    //{
+    //}
 }

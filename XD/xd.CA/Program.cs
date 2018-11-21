@@ -11,7 +11,7 @@ namespace xd.CA
     {
         static void Main(string[] args)
         {
-            ModelManager.CreateModels();
+            ModelManager.InsertDbTypes();
         }
     }
 }

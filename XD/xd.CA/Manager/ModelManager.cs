@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using xd.DAL;
+using xd.DAL.Context;
+using xd.Model;
 
 namespace xd.CA.Manager
 {
@@ -150,6 +153,17 @@ namespace xd.Interface
                 }
             }
 
+        }
+        public static void InsertDbTypes()
+        {
+            var uow = new UnitOfWork(new XdContext());
+            var dbType1 = new DbType()
+            {
+                Name = "VARCHAR"
+            };
+            uow.DbTypes.Add(dbType1);
+            uow.Commit();
+            var dbtypes = uow.DbTypes.GetAll();
         }
     }
 }

@@ -1,7 +1,11 @@
 using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace xd.Model
 {
-    public partial class Field : BaseDomain
+    public partial class Field
     {
+        [Key]
+        public Guid Id { get; set; }
     }
 }

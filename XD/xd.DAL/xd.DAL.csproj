@@ -48,9 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Disposable.cs" />
+    <Compile Include="Persistence\Configurations\DbTypeConfiguration.cs" />
+    <Compile Include="Repositories\DbTypeRepository.cs" />
     <Compile Include="Repositories\FieldRepository.cs" />
     <Compile Include="Repository.cs" />
-    <Compile Include="Context\XdContext.cs" />
+    <Compile Include="XdContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
@@ -68,8 +70,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Persistence\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -15,6 +15,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xd.Interface", "xd.Interfac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xd.DAL", "xd.DAL\xd.DAL.csproj", "{28F51AFA-78C0-4C3D-AF9F-0C1882F71E12}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sql", "Sql", "{84D87151-F96B-44C1-94F6-9A379E30D78D}"
+	ProjectSection(SolutionItems) = preProject
+		1.create_db_schema.sql = 1.create_db_schema.sql
+		2.create_tables.sql = 2.create_tables.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

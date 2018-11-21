@@ -11,10 +11,11 @@ namespace xd.DAL.Context
 {
     public class XdContext : DbContext
     {
-        public XdContext() : base("Name=FirstDbContext")
+        public XdContext() : base("Name=xdContext")
         {
+            Configuration.LazyLoadingEnabled = false;
         }
-        public IDbSet<Field> Fields { get; set; }
+        public virtual DbSet<DbType> DbTypes { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
