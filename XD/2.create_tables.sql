@@ -1,4 +1,4 @@
-﻿create table [xd].[DbType]
+create table [xd].[DbType]
 (
 	Id int identity(1,1) primary key ,
 	Name varchar(100),
@@ -155,11 +155,22 @@ create table [xd].[AppUserRole]
 
 alter table [xd].[Credentials] add constraint FK_AppUser_Id_Credentials_AppUserId foreign key references [xd].[Credentials](AppUserId); 
 
-alter table [xd].[FieldType] add constraint FK_DbType_Id_FieldType_DbTypeId foreign key (DbTypeId) references [xd].[DbType](Id)
-alter table [xd].[Entity] add constraint FK_EntityType_Id_Entity_EntityTypeId foreign key (EntityTypeId) references [xd].[EntityType](Id);
-alter table [xd].[Field] add constraint FK_FieldRequirementLevel_Id_Field_FieldRequirementLevelId foreign key (FieldRequirementLevelId) references [xd].[FieldRequirementLevel](Id);
-alter table [xd].[Form] add constraint FK_FormType_Id_Form_FormTypeId foreign key (FormTypeId) references [xd].[FormType](Id);
-alter table [xd].[View] add constraint FK_ViewType_Id_View_ViewTypeId foreign key (ViewTypeId) references [xd].[ViewType](Id);
-alter table [xd].[AppUserRole] add constraint FK_AppUser_Id_AppUserRole_AppUserId foreign key (AppUserId) references [xd].[AppUser](Id);
-alter table [xd].[AppUserRole] add constraint FK_Role_Id_AppUserRole_RoleId foreign key (RoleId) references [xd].[Role](Id);
+alter table [xd].[Contact] add constraint [FK_xd.Contact_xd.Gender_GenderId] foreign key ([GenderId]) references [xd].[Gender]([Id]);
+alter table [xd].[Contact] add constraint [FK_xd.Contact_xd.Address_AddressId] foreign key ([AddressId]) references [xd].[Address]([Id]);
+alter table [xd].[Contact] add constraint [FK_xd.Contact_xd.Title_TitleId] foreign key ([TitleId]) references [xd].[Title]([Id]);
+alter table [xd].[Contact] add constraint [FK_xd.Contact_xd.[MaritalStatus_MaritalStatusId] foreign key ([MaritalStatusId]) references [xd].[MaritalStatus]([Id]);
+
+
+alter table [xd].[t1] add constraint [FK_xd.t1_xd.[t2_t2Id] foreign key ([t2Id]) references [xd].[[t2]([Id]);
+
+
+alter table [xd].[Field] add constraint [FK_xd.Field_xd.FieldType_FieldTypeId] foreign key ([FieldTypeId]) references [xd].[FieldType]([Id]);
+alter table [xd].[Entity] add constraint [FK_xd.Entity_xd.EntityType_EntityTypeId] foreign key ([EntityTypeId]) references [xd].[EntityType]([Id]);
+alter table [xd].[Field] add constraint [FK_xd.Field_xd.FieldRequirementLevel_FieldRequirementLevelId] foreign key ([FieldRequirementLevelId]) references [xd].[FieldRequirementLevel]([Id]);
+alter table [xd].[Field] add constraint [FK_xd.Field_xd.FieldType_FieldTypeId] foreign key ([FieldTypeId]) references [xd].[FieldType]([Id]);
+alter table [xd].[Form] add constraint [FK_xd.Form_xd.FormType_FormTypeId] foreign key ([FormTypeId]) references [xd].[FormType]([Id]);
+alter table [xd].[View] add constraint [FK_xd.View_xd.ViewType_ViewTypeId] foreign key ([ViewTypeId]) references [xd].[ViewType]([Id]);
+alter table [xd].[AppUserRole] add constraint [FK_xd.AppUserRole_xd.AppUser_AppUserId] foreign key ([AppUserId]) references [xd].[AppUser]([Id]);
+alter table [xd].[AppUserRole] add constraint [FK_xd.AppUserRole_xd.Role_RoleId] foreign key ([RoleId]) references [xd].[Role]([Id]);
+
 
