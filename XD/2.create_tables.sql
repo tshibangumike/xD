@@ -9,7 +9,8 @@ create table [xd].[FieldType]
 (
 	Id int identity(1,1) primary key ,
 	Name varchar(100),
-	Description varchar(max)
+	Description varchar(max),
+	DbTypeId int
 );
 
 create table [xd].[FieldRequirementLevel]
@@ -21,7 +22,7 @@ create table [xd].[FieldRequirementLevel]
 
 create table [xd].[FormType]
 (
-	Id int identity(1,1) primary key ,
+	Id int identity(1,1) primary key,
 	Name varchar(100),
 	Description varchar(max)
 );
@@ -42,19 +43,123 @@ create table [xd].[AppUser]
 	UniqueName varchar(15)
 );
 
+create table [xd].[Gender]
+(
+	Id int identity(1,1) primary key,
+	Name varchar(100),
+	Description varchar(max)
+);
+
+create table [xd].[AddressInformation]
+(
+	Id int identity(1,1) primary key,
+	UnitNumber varchar(10),
+	StreetAddress varchar(300),
+	Suburb varchar(100),
+	City varchar(100),
+	Province varchar(100),
+	PostalCode varchar(5)
+);
+
+create table [xd].[Title]
+(
+	Id int identity(1,1) primary key,
+	Name varchar(100),
+	Description varchar(max)
+);
+
+create table [xd].[MaritalStatus]
+(
+	Id int identity(1,1) primary key,
+	Name varchar(100),
+	Description varchar(max)
+);
+
+create table [xd].[Contact]
+(
+	Id uniqueidentifier,
+	TitleId int,
+	Fullname varchar(150),
+	FirstName varchar(75),
+	LastName varchar(75),
+	MiddleName varchar(75),
+	GenderId int,
+	DateOfBirth date,
+	Age int,
+	IdNumber varchar(20),
+	CellPhoneNumber varchar(13),
+	HomePhoneNumber varchar(13),
+	EmailAddress varchar(50),
+);
+
 create table [xd].[Credentials]
 (
-	Id uniqueidentifier unique not null,
+	AppUserId uniqueidentifier unique not null,
 	Username varchar(20),
 	Password varchar(20),
 	LastLogin smalldatetime
 );
 
+create table [xd].[EntityType]
+(
+	Id int identity(1,1) primary key ,
+	Name varchar(100),
+	Description varchar(max)
+);
+
 create table [xd].[Entity]
 (
 	Id uniqueidentifier primary key,
+	UniqueName varchar(150),
 	Name varchar(150),
-	Label varchar(200),
 	CollectionName varchar(210),
+	Description varchar(max),
+	EntityTypeId int,
+);
+
+create table [xd].[Field]
+(
+	Id uniqueidentifier primary key,
+	SchemaName varchar(150),
+	DisplayName varchar(300),
+	Description varchar(max),
+	FieldTypeId int,
+	EntityId uniqueidentifier,
+	FieldRequirementId int
+);
+
+create table [xd].[View]
+(
+	Id uniqueidentifier primary key,
+	Name varchar(150),
 	Description varchar(max)
 );
+
+create table [xd].[Tab]
+(
+	Id uniqueidentifier primary key,
+	Name varchar(150)
+);
+
+create table [xd].[Role]
+(
+	Id uniqueidentifier primary key,
+	Name varchar(150)
+);
+
+create table [xd].[AppUserRole]
+(
+	AppUserId uniqueidentifier,
+	RoleId uniqueidentifier
+);
+
+alter table [xd].[Credentials] add constraint FK_AppUser_Id_Credentials_AppUserId foreign key references [xd].[Credentials](AppUserId); 
+
+alter table [xd].[FieldType] add constraint FK_DbType_Id_FieldType_DbTypeId foreign key (DbTypeId) references [xd].[DbType](Id)
+alter table [xd].[Entity] add constraint FK_EntityType_Id_Entity_EntityTypeId foreign key (EntityTypeId) references [xd].[EntityType](Id);
+alter table [xd].[Field] add constraint FK_FieldRequirementLevel_Id_Field_FieldRequirementLevelId foreign key (FieldRequirementLevelId) references [xd].[FieldRequirementLevel](Id);
+alter table [xd].[Form] add constraint FK_FormType_Id_Form_FormTypeId foreign key (FormTypeId) references [xd].[FormType](Id);
+alter table [xd].[View] add constraint FK_ViewType_Id_View_ViewTypeId foreign key (ViewTypeId) references [xd].[ViewType](Id);
+alter table [xd].[AppUserRole] add constraint FK_AppUser_Id_AppUserRole_AppUserId foreign key (AppUserId) references [xd].[AppUser](Id);
+alter table [xd].[AppUserRole] add constraint FK_Role_Id_AppUserRole_RoleId foreign key (RoleId) references [xd].[Role](Id);
+

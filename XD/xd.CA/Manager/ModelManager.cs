@@ -14,43 +14,6 @@ namespace xd.CA.Manager
         public static void CreateModels()
         {
 
-            #region Base Domain
-            using (StreamWriter writer = new StreamWriter(@"D:\_PRSNL\Git\Repo\xD\XD\xd.Model\Domain\BaseDomain.cs"))
-            {
-                var content = @"using System;
-                                namespace xd.Model
-                                {
-                                    public class BaseDomain
-                                    {
-                                        public Guid Id { get; set; }
-                                        public string Name { get; set; }
-                                        public DateTime CreatedOn { get; set; }
-                                        public Guid CreatedById { get; set; }
-                                        public Guid ModifiedById { get; set; }
-                                        public DateTime ModifiedOn { get; set; }
-                                    }
-                                }";
-                writer.WriteLine(content);
-            }
-            #endregion
-
-            #region Base Type Domain
-            using (StreamWriter writer = new StreamWriter(@"D:\_PRSNL\Git\Repo\xD\XD\xd.Model\Domain\BaseTypeDomain.cs"))
-            {
-                var content = @"using System;
-                                namespace xd.Model
-                                {
-                                    public class BaseTypeDomain
-                                    {
-                                        public int Id { get; set; }
-                                        public string Name { get; set; }
-                                        public string Description { get; set; }
-                                    }
-                                }";
-                writer.WriteLine(content);
-            }
-            #endregion
-
             var models = new string[] {
                 "Entity",
                 "Field",
