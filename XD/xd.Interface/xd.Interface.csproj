@@ -47,11 +47,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IDbTypeRepository.cs" />
-    <Compile Include="IFieldRepository.cs" />
+    <Compile Include="AddressInformation.cs" />
+    <Compile Include="AppUser.cs" />
+    <Compile Include="AppUserRole.cs" />
+    <Compile Include="Contact.cs" />
+    <Compile Include="Credentials.cs" />
+    <Compile Include="DbType.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="EntityType.cs" />
+    <Compile Include="Field.cs" />
+    <Compile Include="FieldRequirementLevel.cs" />
+    <Compile Include="FieldType.cs" />
+    <Compile Include="Form.cs" />
+    <Compile Include="FormType.cs" />
+    <Compile Include="Gender.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="MaritalStatus.cs" />
+    <Compile Include="MenuItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Role.cs" />
+    <Compile Include="Tab.cs" />
+    <Compile Include="Title.cs" />
+    <Compile Include="View.cs" />
+    <Compile Include="ViewType.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\xd.Model\xd.Model.csproj">

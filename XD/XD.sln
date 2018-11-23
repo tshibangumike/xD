@@ -19,6 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sql", "Sql", "{84D87151-F96
 	ProjectSection(SolutionItems) = preProject
 		1.create_db_schema.sql = 1.create_db_schema.sql
 		2.create_tables.sql = 2.create_tables.sql
+		3.drop_all_tables.sql = 3.drop_all_tables.sql
 	EndProjectSection
 EndProject
 Global

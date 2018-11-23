@@ -48,9 +48,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Disposable.cs" />
-    <Compile Include="Persistence\Configurations\DbTypeConfiguration.cs" />
-    <Compile Include="Repositories\DbTypeRepository.cs" />
-    <Compile Include="Repositories\FieldRepository.cs" />
+    <Compile Include="Repositories\AddressInformation.cs" />
+    <Compile Include="Repositories\AppUser.cs" />
+    <Compile Include="Repositories\AppUserRole.cs" />
+    <Compile Include="Repositories\Contact.cs" />
+    <Compile Include="Repositories\Credentials.cs" />
+    <Compile Include="Repositories\DbType.cs" />
+    <Compile Include="Repositories\Entity.cs" />
+    <Compile Include="Repositories\EntityType.cs" />
+    <Compile Include="Repositories\Field.cs" />
+    <Compile Include="Repositories\FieldRequirementLevel.cs" />
+    <Compile Include="Repositories\FieldType.cs" />
+    <Compile Include="Repositories\Form.cs" />
+    <Compile Include="Repositories\FormType.cs" />
+    <Compile Include="Repositories\Gender.cs" />
+    <Compile Include="Repositories\MaritalStatus.cs" />
+    <Compile Include="Repositories\MenuItem.cs" />
+    <Compile Include="Repositories\Role.cs" />
+    <Compile Include="Repositories\Tab.cs" />
+    <Compile Include="Repositories\Title.cs" />
+    <Compile Include="Repositories\View.cs" />
+    <Compile Include="Repositories\ViewType.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="XdContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,6 +88,8 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Persistence\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
