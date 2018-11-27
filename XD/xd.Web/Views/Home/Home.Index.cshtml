@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Base/_Base.cshtml";
+}
+
+<h2>Home</h2>
+
+<div ng-controller="HomeController">
+    {{ message }}
+</div>
+
+<script>
+    var model = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(this.Model));
+</script>
+

@@ -48,6 +48,9 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -90,10 +93,56 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="JsConfig\xd.Directive.js" />
+    <Content Include="JsConfig\xd.Factory.js" />
+    <Content Include="JsConfig\xd.Helper.js" />
+    <Content Include="JsConfig\xd.Module.js" />
+    <Content Include="JsConfig\xd.Router.js" />
+    <Content Include="JsConfig\xd.Service.js" />
+    <Content Include="Libraries\angular\angular-animate.js" />
+    <Content Include="Libraries\angular\angular-animate.min.js" />
+    <Content Include="Libraries\angular\angular-aria.js" />
+    <Content Include="Libraries\angular\angular-aria.min.js" />
+    <Content Include="Libraries\angular\angular-cookies.js" />
+    <Content Include="Libraries\angular\angular-cookies.min.js" />
+    <Content Include="Libraries\angular\angular-loader.js" />
+    <Content Include="Libraries\angular\angular-loader.min.js" />
+    <Content Include="Libraries\angular\angular-message-format.js" />
+    <Content Include="Libraries\angular\angular-message-format.min.js" />
+    <Content Include="Libraries\angular\angular-messages.js" />
+    <Content Include="Libraries\angular\angular-messages.min.js" />
+    <Content Include="Libraries\angular\angular-mocks.js" />
+    <Content Include="Libraries\angular\angular-parse-ext.js" />
+    <Content Include="Libraries\angular\angular-parse-ext.min.js" />
+    <Content Include="Libraries\angular\angular-resource.js" />
+    <Content Include="Libraries\angular\angular-resource.min.js" />
+    <Content Include="Libraries\angular\angular-route.js" />
+    <Content Include="Libraries\angular\angular-route.min.js" />
+    <Content Include="Libraries\angular\angular-sanitize.js" />
+    <Content Include="Libraries\angular\angular-sanitize.min.js" />
+    <Content Include="Libraries\angular\angular-scenario.js" />
+    <Content Include="Libraries\angular\angular-touch.js" />
+    <Content Include="Libraries\angular\angular-touch.min.js" />
+    <Content Include="Libraries\angular\angular.js" />
+    <Content Include="Libraries\angular\angular.min.js" />
+    <Content Include="Libraries\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Libraries\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Libraries\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Libraries\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Libraries\fontawesome\css\fontawesome-all.min.css" />
+    <Content Include="Libraries\fontawesome\webfonts\fa-brands-400.svg" />
+    <Content Include="Libraries\fontawesome\webfonts\fa-regular-400.svg" />
+    <Content Include="Libraries\fontawesome\webfonts\fa-solid-900.svg" />
+    <Content Include="Libraries\jquery\jquery-3.3.1.slim.min.js" />
+    <Content Include="Libraries\popper\popper.min.js" />
+    <Content Include="Styles\xd.css" />
+    <Content Include="Views\Home\HomeJsController.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -101,7 +150,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="Libraries\fontawesome\webfonts\fa-brands-400.eot" />
+    <Content Include="Libraries\fontawesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="Libraries\fontawesome\webfonts\fa-brands-400.woff" />
+    <Content Include="Libraries\fontawesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="Libraries\fontawesome\webfonts\fa-regular-400.eot" />
+    <Content Include="Libraries\fontawesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="Libraries\fontawesome\webfonts\fa-regular-400.woff" />
+    <Content Include="Libraries\fontawesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="Libraries\fontawesome\webfonts\fa-solid-900.eot" />
+    <Content Include="Libraries\fontawesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="Libraries\fontawesome\webfonts\fa-solid-900.woff" />
+    <Content Include="Libraries\fontawesome\webfonts\fa-solid-900.woff2" />
     <None Include="packages.config" />
+    <Content Include="Views\Base\_Base.cshtml" />
+    <Content Include="Views\Home\Home.Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -111,7 +174,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\xd.Model\xd.Model.csproj">
+      <Project>{AFA850CC-906C-4E35-917E-F9B0DD4741DF}</Project>
+      <Name>xd.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

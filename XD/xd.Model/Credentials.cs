@@ -1,10 +1,13 @@
 using System;
+using System.Security;
 namespace xd.Model
 {
     public class Credentials
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public Guid AppUserId { get; set; }
+        public string Username { get; set; }
+        public SecureString Password { get; set; }
+        public DateTime LastLogin { get; set; }
     }
 }
-
+                

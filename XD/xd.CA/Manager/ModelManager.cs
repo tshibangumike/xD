@@ -54,7 +54,7 @@ namespace xd.CA.Manager
                 ";
                     writer.WriteLine(classContent);
                 }
-                using (StreamWriter writer = new StreamWriter(@"D:\_PRSNL\Git\Repo\xD\XD\xd.DAL\Repositories\" + model + ".cs"))
+                using (StreamWriter writer = new StreamWriter(@"D:\_PRSNL\Git\Repo\xD\XD\xd.DAL\Repositories\" + model + "Repository.cs"))
                 {
                     var classContent = @"using xd.DAL.Context;
                 using xd.Interface;
@@ -76,7 +76,7 @@ namespace xd.CA.Manager
                 ";
                     writer.WriteLine(classContent);
                 }
-                using (StreamWriter writer = new StreamWriter(@"D:\_PRSNL\Git\Repo\xD\XD\xd.Interface\" + model + ".cs"))
+                using (StreamWriter writer = new StreamWriter(@"D:\_PRSNL\Git\Repo\xD\XD\xd.Interface\I" + model + "Repository .cs"))
                 {
                     var classContent = @"using xd.Model;
                 namespace xd.Interface

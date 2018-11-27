@@ -1,10 +1,10 @@
 using System;
-namespace xd.Model
-{
-    public class Role
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-    }
-}
-
+                namespace xd.Model
+                {
+                    public class Role
+                    {
+                        public int Id { get; set; }
+                        public string Name { get; set; }
+                    }
+                }
+                
